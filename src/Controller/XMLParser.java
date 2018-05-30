@@ -9,6 +9,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Class that will allow us to parse an xml file
@@ -17,23 +18,42 @@ import java.io.IOException;
 public class XMLParser
 {
     /**
+     * Default path to the configuration file
+     */
+    private final String path = "/tmp/server.cfg";
+    /**
      * Default port used in case of no cfg file
      */
     private int port = 2009;
     /**
      * Default address used in case of no cfg file
      */
-    private String ipaddress = "localhost";
+    private String ipaddress = "126546";
+
+    /**
+     * String that contains the error
+     */
+    private String ErrorParsing;
 
     /**
      * Constructor that will read the configuration file
      * and get the ipadress and the port of the main application
      */
+
     public XMLParser()
     {
         try
         {
-            File fXmlFile = new File("/home/raldoh/IdeaProjects/ProjetS8/web/cfg/server.cfg");
+            File fXmlFile = new File(path);
+            if(!fXmlFile.isFile())
+            {
+                PrintWriter writer = new PrintWriter(path, "UTF-8");
+                writer.println("<server>");
+                writer.println("<ipaddress>"+ipaddress+"</ipaddress>");
+                writer.println("<port>"+port+"</port>");
+                writer.println("</server>");
+                writer.close();
+            }
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
@@ -54,7 +74,7 @@ public class XMLParser
         }
         catch (final ParserConfigurationException | SAXException | IOException e)
         {
-            e.printStackTrace();
+            ErrorParsing = e.getMessage();
         }
     }
 
@@ -74,6 +94,15 @@ public class XMLParser
     public String getIpaddress()
     {
         return ipaddress;
+    }
+
+    /**
+     * Get the error
+     * @return the error
+     */
+    public String getErrorParsing()
+    {
+        return ErrorParsing;
     }
 
 }

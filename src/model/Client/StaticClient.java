@@ -1,5 +1,7 @@
 package model.Client;
 
+import java.io.IOException;
+
 /**
  *  Singleton that create a single client that
  *  connects to the main application
@@ -27,11 +29,15 @@ public class StaticClient
      * Get the client to send command
      * @return Object 'Client' that will allow us to send command
      */
-    public static synchronized SendCommand sendRequest()
-    {
+    public static synchronized SendCommand sendRequest() throws IOException {
         if(client == null)
         {
-            client = new SendCommand();
+            try {
+                client = new SendCommand();
+            }catch(IOException e)
+            {
+                throw e;
+            }
             Thread thread = new Thread(client);
             thread.start();
         }

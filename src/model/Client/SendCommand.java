@@ -33,8 +33,7 @@ public class SendCommand implements Runnable
      * Create an object that connect to the socket
      * and initialize all the buffers
      */
-    public SendCommand()
-    {
+    public SendCommand() throws IOException {
         try
         {
             XMLParser xmlParser = new XMLParser();
@@ -45,7 +44,7 @@ public class SendCommand implements Runnable
         }
         catch (IOException e)
         {
-            e.printStackTrace();
+            throw e;
         }
     }
 

@@ -40,5 +40,12 @@ public class Display extends HttpServlet
         catch (InterruptedException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        catch(IOException e)
+        {
+            XMLParser xmlParser = new XMLParser();
+            String param = "Current parameter: " + xmlParser.getIpaddress()+":"+xmlParser.getPort() + "\nError: " + xmlParser.getErrorParsing();
+            request.setAttribute("errorMsg", param);
+            this.getServletContext().getRequestDispatcher("/error.jsp").forward(request, response);
+        }
     }
 }
