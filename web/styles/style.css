@@ -1,0 +1,158 @@
+
+<!-- Style in first page with webSite -->
+*{
+  box-sizing: border-box;
+}
+
+body{
+  
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:1rem;
+  font-weight:normal;
+  line-height:1.5;
+  color:#333;
+  overflow-x:hidden;
+  
+}
+
+.nav{
+	background-color: rgba(0,0,0,0.2);
+	position: fixed;
+}
+
+a{
+	text-decoration: none;
+	font-size: 3vh;
+	font-size: 2vw;
+	color: red;
+	font-family: "proxima nova";
+	margin-right: 3%;
+	padding-bottom: 0.2%
+}
+
+.a:hover{
+	border-bottom: 6px solid #000000;
+	border-radius: 22%;
+	color: #000000;
+	
+}
+
+.absolute {
+	position: fixed;
+	left: 0; right: 0; bottom: 0;top: 0;
+	
+}
+
+.v-header{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+}
+
+.container{
+  max-width:960px;
+  padding-left:1rem;
+  padding-right:1rem;
+  margin:auto;
+  text-align:center;
+}
+
+.fullscreen-video-wrap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+<!-- Video -->
+.fullscreen-video-wrap video{
+  min-height:100%;
+  min-width:100%;
+}
+
+.header-overlay{
+  height:100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  z-index:1;
+  background:#225470;
+  opacity:0.85;
+}
+
+.header-content{
+  z-index:2;
+}
+
+.header-content h1{
+  font-size:50px;
+  margin-bottom:0;
+}
+
+.header-content p{
+  font-size:1.5rem;
+  display:block;
+  padding-bottom:2rem;
+}
+/* Button swag */
+.ButtonDirection{
+	color:  #34b3a0;
+	font-family: "proxima nova";
+	font-weight: 100;
+	font-size: 56px;
+	text-align: center;
+	
+	border: solid 2px #34b3a0;
+	border-radius: 50px;
+	
+	padding: 10px 80px;
+	padding: 1rem 2rem;
+	text-decoration: none;
+	
+}
+/* Button swag effect */
+.ButtonDirection:hover{
+	background-color: #34b3a0;
+	color: #fff;
+
+}
+
+/* Button website polytech */
+.ButtonWebsite{
+  background: #34b3a0;
+  font-family: "proxima nova";
+  border: solid 2px #34b3a0;
+  border-radius: 50px;
+  color:#fff;
+  font-size:1.2rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 100;
+
+}
+
+.section{
+  padding:20px 0;
+   
+}
+
+.section-b{
+  background:#333;
+  color:#fff;
+}
+
+@media(max-width:960px){
+  .container{
+    padding-right:3rem;
+    padding-left:3rem;
+  }
+  
+  
+}
+
+

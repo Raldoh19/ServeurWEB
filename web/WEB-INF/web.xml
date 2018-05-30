@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <display-name>Bienvenu au DI</display-name>
+
+    <servlet>
+        <servlet-name>Result</servlet-name>
+        <servlet-class>Controller.Result</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Result</servlet-name>
+        <url-pattern>/Result</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Display</servlet-name>
+        <servlet-class>Controller.Display</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Display</servlet-name>
+        <url-pattern>/Display</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResultEnd</servlet-name>
+        <servlet-class>Controller.ResultEnd</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ResultEnd</servlet-name>
+        <url-pattern>/ResultEnd</url-pattern>
+    </servlet-mapping>
+
+</web-app> 
